@@ -1,5 +1,5 @@
 ﻿@using BlazorServerAuthWithAzureActiveDirectory.Data
-@inject TokenProvider TokensProvider
+@inject TokenProvider TokenProvider
 
 <CascadingAuthenticationState>
     <Router AppAssembly="@typeof(Program).Assembly">
@@ -19,8 +19,8 @@
 
     protected override Task OnInitializedAsync()
     {
-        TokensProvider.AccessToken = InitialState.AccessToken;
-        TokensProvider.RefreshToken = InitialState.RefreshToken;
+        TokenProvider.AccessToken = InitialState.AccessToken;
+        TokenProvider.RefreshToken = InitialState.RefreshToken;
 
         return base.OnInitializedAsync();
     }
